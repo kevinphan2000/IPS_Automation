@@ -21,6 +21,33 @@ function autoFillIPSTemplateGoogleDoc(e) {
   if (goalsArr.length >= 3)
     goal3 = goalsArr[2]
 
+  //Implement the converting from string to int (Kevin)
+    var arr1 = goals1.map(function(item) {
+      return parseInt(item, 10);
+    })
+    
+    var arr2 = goals2.map(function(item){
+      return parseInt(item,10);
+    })
+
+    var arr3 = goals3.map(function(item){
+      return parseInt(item,10);
+    })
+
+    let combinedArray = []
+    combinedArray.push(arr1, arr2, arr3);
+
+    //Test case:
+    /*
+    var goals1 = ["1"]
+    arr1 = [1]
+    var goals2 = ["23"]
+    arr2 = [23]
+    var goals3 = ["1,2,3,4"]
+    arr3 = [1]
+    */
+
+
 //grab the template file ID to modify
   const file = DriveApp.getFileById(templateID);
 
